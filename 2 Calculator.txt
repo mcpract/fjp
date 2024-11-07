@@ -1,0 +1,95 @@
+package calc;
+
+import java.util.Scanner;
+
+class Calc {
+    private double firstNo;
+    private double secondNo;
+
+    public void getFirstNo() {
+        System.out.print("Enter the first number: ");
+        Scanner in = new Scanner(System.in);
+        firstNo = in.nextDouble();
+    }
+
+    public void getSecondNo() {
+        System.out.print("Enter the second number: ");
+        Scanner in = new Scanner(System.in);
+        secondNo = in.nextDouble();
+    }
+
+    public double addition() {
+        return (firstNo + secondNo);
+    }
+
+    public double subtract() {
+        return (firstNo - secondNo);
+    }
+
+    public double multiply() {
+        return (firstNo * secondNo);
+    }
+
+    public double division() {
+        if (secondNo != 0) {
+            return (firstNo / secondNo);
+        } else {
+            System.out.println("Cannot divide by zero.");
+            return Double.NaN;
+        }
+    }
+
+    public int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++)
+            fact = fact * i;
+        return fact;
+    }
+}
+
+public class Calculator {
+    public static void main(String[] args) {
+        Calc obj = new Calc();
+        obj.getFirstNo();
+        obj.getSecondNo();
+        Scanner in = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Factorial");
+            System.out.print("Enter your choice: ");
+            int ch = in.nextInt();
+
+            switch (ch) {
+                case 1:
+                    System.out.println("Result is: " + obj.addition());
+                    break;
+                case 2:
+                    System.out.println("Result is: " + obj.subtract());
+                    break;
+                case 3:
+                    System.out.println("Result is: " + obj.multiply());
+                    break;
+                case 4:
+                    System.out.println("Result is: " + obj.division());
+                    break;
+                case 5:
+                    System.out.println("Enter a number for the factorial:");
+                    int n = in.nextInt();
+                    if (n >= 0) {
+                        System.out.println("Result is: " + obj.factorial(n));
+                    } else {
+                        System.out.println("Factorial is not defined for negative numbers.");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+            }
+            System.out.print("Do you want to continue? Enter 1 for Yes or 0 for No:");
+            choice = in.nextInt();
+        } while (choice == 1);
+
+        in.close();
+    }
+}

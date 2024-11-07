@@ -1,0 +1,28 @@
+//First Package
+
+package packageproject;
+
+public class packageclass {
+    public int x, y;
+
+    public void display() {
+        System.out.println("Welcome to package project - PackageClass");
+    }
+
+    public int add(int x, int y) {
+        return x + y;
+    }
+}
+
+// Second Package
+
+package mypackage;
+import packageproject.*;
+
+public class mypackageclass {
+    public static void main(String[] args) {
+        packageclass p1 = new packageclass();
+        p1.display();
+        System.out.println("Addition is = " + p1.add(10, 20));
+    }
+}

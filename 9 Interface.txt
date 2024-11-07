@@ -1,0 +1,17 @@
+package ass9;
+
+interface Area {
+    final static float PI = 3.14f;
+    float compute(float x, float y);
+}
+
+public class InterfaceClass implements Area {
+    public float compute(float x, float y) {
+        return (PI * x * y);
+    }
+
+    public static void main(String[] args) {
+        InterfaceClass p1 = new InterfaceClass();
+        System.out.println("Area = " + p1.compute(20.00f, 20.0f));
+    }
+}

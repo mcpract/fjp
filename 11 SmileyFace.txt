@@ -1,0 +1,22 @@
+import java.applet.Applet;
+import java.awt.*;
+
+public class SmileyFaceApplet extends Applet {
+    public void paint(Graphics g) {
+        // Set background color
+        setBackground(Color.white);
+        
+        // Draw face outline
+        g.setColor(Color.yellow);
+        g.fillOval(50, 50, 200, 200); // x, y, width, height
+        
+        // Draw eyes
+        g.setColor(Color.black);
+        g.fillOval(90, 100, 30, 30); // Left eye
+        g.fillOval(180, 100, 30, 30); // Right eye
+        
+        // Draw mouth
+        g.setColor(Color.red);
+        g.drawArc(100, 150, 100, 50, 0, -180); 
+    }
+}

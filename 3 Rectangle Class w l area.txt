@@ -1,0 +1,51 @@
+package ass3;
+
+import java.util.*;
+
+public class Rectangle {
+    double length, width, area;
+    String color;
+    Scanner s = new Scanner(System.in);
+
+    void getLength() {
+        System.out.print("Enter length:");
+        length = s.nextDouble();
+    }
+
+    void getWidth() {
+        System.out.print("Enter width:");
+        width = s.nextDouble();
+    }
+
+    double findArea() {
+        area = length * width;
+        return area;
+    }
+
+    String getColor() {
+        System.out.print("Enter color:");
+        color = s.next();
+        return color;
+    }
+
+    public static void main(String[] args) {
+        Rectangle R1 = new Rectangle();
+        Rectangle R2 = new Rectangle();
+
+        System.out.println("Enter the details for 1st rectangle:");
+        R1.getLength();
+        R1.getWidth();
+        String str1 = R1.getColor();
+
+        System.out.println("Enter the details for 2nd rectangle:");
+        R2.getLength();
+        R2.getWidth();
+        String str2 = R2.getColor();
+
+        if (R1.findArea() == R2.findArea() && str1.equals(str2)) {
+            System.out.println("Matching Rectangle");
+        } else {
+            System.out.println("Not matching Rectangles");
+        }
+    }
+}
